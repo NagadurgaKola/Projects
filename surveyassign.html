@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      h1{
+        padding-top: 20px;
+      }
+      #a1{
+        margin-left:50px;
+      }
+      label{
+        margin-left: 120px;
+        font-size: 20px;
+      }
+      input,#m {
+        margin-top: 10px;
+        margin-left: 120px;
+        width: 640px;
+        height: 25px;
+        margin-top: 8px;
+        border-radius: 5px;
+      }
+      select{
+        margin-left: 20px;
+        width: 300px;
+        height: 27px;
+      }
+      .b{
+        margin-left:-190px;
+        height: 18px;
+      }
+      .a{
+        margin-left: -300px;
+      }
+      #c{
+        margin-left: 140px;
+      }
+      #d{
+        margin-left: 410px;
+      }
+      .e{
+        width: 100px;
+        height: 27px;
+        background-color: whitesmoke;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      .e:hover
+      {
+        background-color: skyblue;
+      }
+      .f{
+        width: 250px;
+      }
+      #n{
+        margin-top: 8px;
+        margin-left: 120px;
+        border: 2px solid black;
+        border-radius: 5px;
+      }
+    </style>
+</head>
+<body>
+    <div style="height: 1030px; width:1000px;background-color:cadetblue"  >
+        <center><h1>Customer Survey Form</h1></center>
+        <div style="height: 900px; width:900px;background-color:white" id="a1">
+            <br><br><br>
+            <form id="myForm">
+           <br><br><label for="name">Name</label><br>
+           <input type="text" name="first_name"  required placeholder="Enter your first name"  class="f"><sup style="color: red;"> *</sup>
+           <input type="text" name="last_name" id="" placeholder="Enter your last name" required class="f"><sup style="color: red;"> *</sup><br><br>
+           <label for="email" id="email">Email Id</label><br>
+           <input type="email" name="email" id="email" placeholder="Enter Email Id" required><sup style="color: red;"> *</sup><br><br>
+           <label for="dateOfBirth">Date of Birth</label><br>
+           <input type="date" name="dateOfBirth" id="dateOfBirth" max="2023-12-30"><br><br>
+           <label for="gender">Gender</label><br>
+           <input type="radio" class="b" name="a"><label for="" class="a">Male</label><br>
+           <input type="radio" class="b" name="a"><label for="" class="a">Female</label><br>
+           <input type="radio" class="b" name="a"><label for="" class="a">Others</label><br><br>
+           <label for="country" id="m">Country</label><br>
+           <select name="country"  id="n">
+            <option value="">--Select--</option>
+            <option value="">USA</option>
+            <option value="">INDIA</option>
+            <option value="">AUSTRALIA</option>
+            <option value="">THAILAND</option>
+            <option value="">SOUTH KOREA</option>
+            <option value="">NORTH KOREA</option>
+           </select><br><br>
+           <label for="profession">Profession</label><br>
+           <input type="text" name="profession" placeholder="Enter your profession"><br><br>
+           <label for="phnNumber">Mobile Number</label><br>
+           <input type="tel" name="phnNumber" placeholder="Enter mobile number"minlength="10" maxlength="10" pattern="[0-9]{10}"><br><br><br><br>
+           <input type="submit" value="Submit" id="f" class="e" id="submit-id">
+           <button id="d" class="e" type="button">Reset</button></form>
+        </div>
+    </div>
+    <script>
+      document.getElementById("myForm").addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          var firstName = document.getElementsByName("first_name")[0].value || "N/A";
+          var lastName = document.getElementsByName("last_name")[0].value || "N/A";
+          var email = document.getElementsByName("email")[0].value || "N/A";
+          var dateOfBirth = document.getElementsByName("dateOfBirth")[0].value || "N/A";
+          var gender = document.querySelector('input[name="gender"]:checked') ? document.querySelector('input[name="gender"]:checked').value : "N/A";
+          var country = document.getElementsByName("country")[0].value || "N/A";
+          var profession = document.getElementsByName("profession")[0].value || "N/A";
+          var phnNumber = document.getElementsByName("phnNumber")[0].value || "N/A";
+
+          var details = "Name: " + firstName + " " + lastName + "\nEmail: " + email + "\nDate of Birth: " + dateOfBirth + "\nGender: " + gender + "\nCountry: " + country + "\nProfession: " + profession + "\nMobile Number: " + phnNumber;
+          alert(details);
+
+          document.getElementById("myForm").reset();
+      });
+      document.getElementById("d").addEventListener("click", function () {
+          document.getElementById("myForm").reset();
+      });
+  </script>
+</body>
+</html>

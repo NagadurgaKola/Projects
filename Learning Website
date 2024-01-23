@@ -1,0 +1,99 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./website.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li><a href="javascript:void(0);" onclick="showHome();">Home</a></li>
+                <li class="dropdown"><a href="#courses" class="dropbtn">Courses</a>
+                <div class="dropdown-content">
+                    <a href="javascript:void(0);" onclick="loadCourse('https://learnhtmlcss.online/')">HTML & CSS</a>
+                    <a href="javascript:void(0);" onclick="loadCourse('https://learnjavascript.online/')">JavaScript</a>
+                    <a href="javascript:void(0);" onclick="loadCourse('https://react-tutorial.app/?utm_source=learnjavascript.online')">React JS</a>
+                    <a href="javascript:void(0);" onclick="loadCourse('https://nodejs.org/')">Node JS</a>
+                    <a href="javascript:void(0);" onclick="loadCourse('https://angularjs.org/')">Angular JS</a>
+                </div></li>
+                <li><a href="javascript:void(0);" onclick="showProjects('https://www.codewithrandom.com/javascript-projects/')">Projects</a></li>
+                <li><a href="javascript:void(0);" onclick="showAbout();" id="aboutLink">About</a></li>
+            </ul>
+<ul class="icon-list"><li class="social-icons">
+    <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+    <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+</li></ul>
+        </nav>
+        <div id="homeContent">
+        <div class="welcome-section">
+            <h1>Welcome to Web Technologies</h1>
+            <h4 class="sub-heading">Design your World !</h4> <!-- Additional heading -->
+        </div>
+          <img src="./gamelogo (2).png" alt=""></div>
+          <div id="about" style="display: none;">
+            <h1>About Our Platform</h1>
+            <p>Our platform is dedicated to empowering aspiring web developers by providing a comprehensive front-end development learning experience. We specialize in teaching the fundamental building blocks of web design and development, ensuring that our users can confidently create engaging, responsive, and modern websites.</p>
+        
+            <h2>Our Courses</h2>
+            <p>We offer a range of courses designed to cater to different skill levels, from beginners to advanced developers. Our curriculum includes:</p>
+            <ul>
+                <li><strong>HTML:</strong> Dive into the world of markup languages and learn how to structure your web pages effectively.</li>
+                <li><strong>CSS:</strong> Master the art of styling and learn how to bring your website designs to life.</li>
+                <li><strong>JavaScript:</strong> Discover the power of scripting to create dynamic and interactive web experiences.</li>
+                <li><strong>React JS:</strong> Elevate your development skills with this popular JavaScript library for building user interfaces.</li>
+                <li><strong>Angular JS:</strong> Learn how to develop robust and scalable web applications using this versatile framework.</li>
+            </ul>
+        
+            <p>Our mission is to provide an accessible and engaging platform for learners to gain the skills they need to excel in the ever-evolving field of web development.</p>
+        </div>
+        <iframe id="courseFrame" style="width: 100%; height:100%; border: none;"></iframe>
+    </div>
+</body>
+<script>
+function loadCourse(url) {
+   var courseFrame= document.getElementById('courseFrame');
+   var homeContent=document.getElementById('homeContent');
+   var about=document.getElementById('about');
+   homeContent.style.display='none';
+   about.style.display='none';
+    courseFrame.style.display='block';
+    courseFrame.src=url;
+    closeDropdown();
+}
+function closeDropdown(){
+    var dropdownContent=document.querySelector('.dropdown-content');
+    dropdownContent.style.display='content';
+}
+function showAbout() {
+    document.getElementById('homeContent').style.display = 'none'; // Hide homepage content
+    document.getElementById('about').style.display = 'block';
+    document.getElementById('courseFrame').style.display='none'; // Show about section
+}
+
+function showHome() {
+    document.getElementById('homeContent').style.display = 'block'; // Show homepage content
+    document.getElementById('about').style.display = 'none';
+    document.getElementById('courseFrame').style.display='none'; // Hide about section
+}
+function showProjects(url) {
+    var courseFrame = document.getElementById('courseFrame');
+    var homeContent = document.getElementById('homeContent');
+    var aboutSection = document.getElementById('about');
+
+    // Hide home and about content
+    homeContent.style.display = 'none';
+    about.style.display = 'none';
+
+    // Show and load the projects iframe
+    courseFrame.style.display = 'block';
+    courseFrame.src = url;
+}
+
+</script>
+
+</html>

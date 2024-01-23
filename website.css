@@ -1,0 +1,167 @@
+body{
+    margin: 0px;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background:linear-gradient(0deg,#f6f4f6,#89b0fe);
+}
+.welcome-section {
+    text-align: center;
+    margin: 20px 0;
+    position: relative; 
+    margin-top: 20px;
+    margin-bottom: 20px;/* Needed for absolute positioning of sub-heading */
+}
+
+.welcome-section h1 {
+    font-family: Algerian;
+    margin-top: 100px;
+    font-size: 50px;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    /* Add more styling as needed */
+}
+
+.sub-heading {
+    position: absolute;
+    top: 100%; /* Position below the main heading */
+    left: 50%;
+    transform: translateX(-50%); /* Center the sub-heading */
+    font-size: 30px; /* Adjust as needed */
+    color: #666; /* Adjust color as needed */
+    display: none; /* Hide initially */
+}
+
+.welcome-section:hover .sub-heading {
+    display: block; /* Show on hover */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5) ;
+}
+img{
+    display: block;
+    margin: 20px auto;
+    width: auto;
+    max-height: 50vh;
+    filter: drop-shadow(5px 5px 5px);
+}
+
+.navbar {
+    background-color:black; /* Background color of the navbar */
+    overflow:hidden ;
+}
+
+.nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li {
+    float: left;
+    text-shadow: 0.2px 0.2px 0.px ;
+}
+
+.nav-list li a, .dropbtn{
+    display: block;
+    color: white; /* Text color */
+    text-align: center;
+    padding: 12px 14px; /* Padding inside each link */
+    text-decoration: none;
+}
+
+.nav-list li a:hover{
+    background-color:gray; /* Color change on hover */
+    color: white;
+}
+.dropdown:hover .dropbtn {
+background-color:gray; /* Color change on hover */
+width:130px;
+display: grid;
+    color:white;
+    border: 1px solid gray;
+     position:relative;
+    height: fit-content;
+}
+.dropdown-content{
+    display: none;
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index:1;
+}
+.dropdown-content a {
+    color: black;
+    padding: 8px 10px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 14px;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: contents;
+}  
+/* ... existing CSS ... */
+
+.social-icons {
+    float: right;
+}
+
+.icon-list li.social-icons a {
+    padding: 12px; /* Adjust as needed */
+    color: white; /* Icon color */
+}
+
+.icon-list li.social-icons a:hover {
+    color: gray; /* Change color on hover */
+}
+
+.fa-brands { /* Font Awesome Icons */
+    font-size: 22px; /* Adjust icon size as needed */
+}
+#courseFrame{
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: none;
+}
+#about {
+    background-color:linear-gradient(0deg,#f6f4f6,#f473b1); /* Light background for the section */
+    padding: 20px;
+    margin-top: 30px;
+}
+
+#about h1, #about h2 {
+    color: black; /* Dark text for headings */
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+#about p {
+    color: #111010; /* Slightly lighter text for paragraphs */
+    line-height: 1.6;
+}
+
+#about ul {
+    list-style: inside square; /* Stylish list bullets */
+}
+
+#about li {
+    margin-bottom: 10px;
+}
+#about {
+    display: none; /* Hide the section initially */
+    /* ... other styles for the about section ... */
+}
+#homeContent{
+    display: block;
+}
+
+
